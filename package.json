@@ -38,14 +38,15 @@
   "main": "lib/prismic.js",
   "scripts": {
     "build": "scripts/browser.js",
-    "postbuild": "npm run docs",
     "uglify": "uglifyjs -c -o=dist/prismic.io.min.js dist/prismic.io.js",
     "preuglify": "npm run build",
     "prepublish": "npm run uglify",
     "lint": "eslint lib",
     "test": "istanbul cover _mocha -- -t 3000 test/",
-    "posttest": "eslint lib",
-    "predocs": "rimraf ./docs",
-    "docs": "jsdoc lib/*.js README.md -d docs"
+    "posttest": "eslint lib"
+  },
+  "dependencies": {
+    "http": "0.0.0",
+    "https": "1.0.0"
   }
 }
